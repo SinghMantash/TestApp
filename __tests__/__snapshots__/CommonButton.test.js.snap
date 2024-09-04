@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`renders correctly 1`] = `
+exports[`CommonButton Snapshot Matching 1`] = `
 <View
   style={
     [
@@ -42,6 +42,7 @@ exports[`renders correctly 1`] = `
         "opacity": 1,
       }
     }
+    testID="commonBtn"
   >
     <View
       style={

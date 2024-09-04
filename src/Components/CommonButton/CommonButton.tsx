@@ -1,10 +1,10 @@
-import { Button, StyleSheet, Text, View } from 'react-native';
+import {Button, StyleSheet, Text, View} from 'react-native';
 import React from 'react';
 
-const CommonButton = ({ text = '', onPress = () => {}  , styles={}}) => {
+const CommonButton = ({text = '', onPress = () => {}, styles = {}}) => {
   return (
     <View style={[styles]}>
-      <Button title={text} onPress={onPress} />
+      <Button title={text} onPress={onPress} testID="commonBtn" />
     </View>
   );
 };

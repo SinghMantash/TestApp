@@ -6,7 +6,7 @@ import {scaleHeight} from '../../styles/dimensions';
 const Header = ({title=""}) => {
   return (
     <View style={styles.container}>
-      <Text style={styles.headerText}>{title}</Text>
+      <Text style={styles.headerText} testID='header-text'>{title}</Text>
     </View>
   );
 };
