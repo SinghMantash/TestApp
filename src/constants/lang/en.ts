@@ -1,0 +1,16 @@
+export default {
+  EMAIL: 'Email/UserId',
+  PASSWORD: 'Password',
+  LOGIN: 'Login',
+  PLEASE_ENTER_A_VALID_EMAIL: 'Please enter a valid email or userId',
+  PLEASE_ENTER_A_VALID_PASSWORD: 'Please enter a valid password',
+  LOGOUT: 'LOGOUT',
+  PROFILE: 'Profile',
+  EMAIL_ONLY: 'Email',
+  USERNAME: 'User Name',
+  FIRST_NAME: 'First Name',
+  LAST_NAME: 'Last Name',
+  GENDER: 'Gender',
+  MALE: 'Male',
+  FEMALE: 'Female',
+};

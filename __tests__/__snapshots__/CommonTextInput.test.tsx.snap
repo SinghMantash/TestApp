@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<View>
+  <TextInput
+    editable={false}
+    onChangeText={[Function]}
+    placeholder=""
+    secureTextEntry={false}
+    style={
+      {
+        "borderColor": "#F27900",
+        "borderRadius": 50,
+        "borderWidth": 1,
+        "marginTop": 16.428571428571427,
+        "paddingLeft": 16,
+      }
+    }
+    value=""
+  />
+  <Text
+    style={
+      {
+        "color": "red",
+      }
+    }
+  />
+</View>
+`;
