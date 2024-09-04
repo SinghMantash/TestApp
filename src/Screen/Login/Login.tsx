@@ -1,5 +1,12 @@
-import {Alert, SafeAreaView, StyleSheet, Text, View} from 'react-native';
-import React, {useState} from 'react';
+import {
+  Alert,
+  SafeAreaView,
+  StyleSheet,
+  Text,
+  TextInput,
+  View,
+} from 'react-native';
+import React, {useCallback, useState} from 'react';
 import colors from '../../styles/colors';
 import CommonTextInput from '../../Components/CommonTextInput/CommonTextInput';
 import CommonButton from '../../Components/CommonButton/CommonButton';
@@ -13,9 +20,6 @@ import actions from '../../redux/actions';
 import Loader from '../../Components/Loader/Loader';
 
 const Login = () => {
-  const navigation = useNavigation();
-  const dispatch = useDispatch();
-
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [emailError, setEmailError] = useState('');
@@ -41,6 +45,7 @@ const Login = () => {
   };
 
   const onPressLogin = () => {
+    isPasswordValid()
     if (isEmailValid() && isPasswordValid()) {
       setIsLoading(true);
       const body = {
@@ -53,8 +58,6 @@ const Login = () => {
         .postLoginDetails(body)
         .then(res => {
           console.log(res);
-          dispatch(saveUserData(res));
-          // navigation.navigate(navigationStrings.PROFILE);
           setIsLoading(false);
         })
         .catch(err => {
@@ -66,24 +69,32 @@ const Login = () => {
         });
     }
   };
+  const [name, setUser] = React.useState('');
   return (
     <SafeAreaView style={styles.mainContiner}>
       <Loader isLoading={isLoading} />
       <View style={styles.header} />
       <View style={styles.content}>
         <View style={styles.fieldContainer}>
+          <TextInput value={name} onChangeText={setUser} testID="input" />
           <CommonTextInput
+            testID={'email-input'}
             placeholder={strings.EMAIL}
             value={email}
             onChangeText={setEmail}
             validationError={emailError}
+            editable={true}
+            showHeading={false}
           />
           <CommonTextInput
+            testID={'password-input'}
             placeholder={strings.PASSWORD}
             value={password}
             onChangeText={setPassword}
             validationError={passwordError}
             secureTextEntry={true}
+            editable={true}
+            showHeading={false}
           />
           <CommonButton text={strings.LOGIN} onPress={onPressLogin} />
         </View>

@@ -15,7 +15,6 @@ import {useDispatch, useSelector} from 'react-redux';
 import CommonButton from '../../Components/CommonButton/CommonButton';
 import strings from '../../constants/lang';
 import {clearUserData} from '../../utils/utils';
-import {useNavigation} from '@react-navigation/native';
 import navigationStrings from '../../constants/navigationStrings';
 import Header from '../../Components/Header/Header';
 import CommonTextInput from '../../Components/CommonTextInput/CommonTextInput';
@@ -26,7 +25,6 @@ import Radiobutton from '../../Components/Radiobutton/Radiobutton';
 const Profile = () => {
   const {userData} = useSelector(state => state);
   const dispatch = useDispatch();
-  const navigation = useNavigation();
   const onLogout = () => {
     dispatch(reset());
     clearUserData();

@@ -3,6 +3,7 @@
 exports[`renders correctly 1`] = `
 <View>
   <TextInput
+    accessibilityLabel="answer input"
     editable={false}
     onChangeText={[Function]}
     placeholder=""
@@ -24,6 +25,7 @@ exports[`renders correctly 1`] = `
         "color": "red",
       }
     }
+    testID="undefined-error"
   />
 </View>
 `;
